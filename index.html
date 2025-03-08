@@ -1,67 +1,118 @@
-import React, { useState } from "react";
-import { Card, CardContent } from "./components/ui/card";
-import { Button } from "./components/ui/button";
-import { motion } from "framer-motion";
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>探索世界 - 旅遊網站</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>探索世界</h1>
+            <ul>
+                <li><a href="#home">首頁</a></li>
+                <li><a href="#destinations">目的地</a></li>
+                <li><a href="#booking">預訂</a></li>
+                <li><a href="#contact">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </header>
 
-const translations = {
-  en: {
-    learnMore: "Learn More",
-    close: "Close",
-    bookFlight: "Book Flight",
-  },
-  zh: {
-    learnMore: "了解更多",
-    close: "關閉",
-    bookFlight: "訂機票",
-  },
-};
+    <!-- 圖片輪播 -->
+    <section id="home">
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="images/hero1.jpg" alt="景點1">
+                <div class="text">探索自然</div>
+            </div>
+            <div class="slide fade">
+                <img src="images/hero2.jpg" alt="景點2">
+                <div class="text">城市冒險</div>
+            </div>
+            <div class="slide fade">
+                <img src="images/hero3.jpg" alt="景點3">
+                <div class="text">文化之旅</div>
+            </div>
+            <button class="explore-btn">立即探索</button>
+        </div>
+    </section>
 
-const destinations = [
-  { country: "日本", city: "東京", image: "/tokyo.jpg", description: "探索傳統與現代交融的城市。", link: "https://www.japan.travel/" },
-  { country: "法國", city: "巴黎", image: "/paris.jpg", description: "浪漫的艾菲爾鐵塔與藝術氛圍。", link: "https://www.france.fr/en" },
-  { country: "美國", city: "紐約", image: "/newyork.jpg", description: "體驗不夜城的繁華生活。", link: "https://www.nycgo.com/" },
-  { country: "義大利", city: "羅馬", image: "/rome.jpg", description: "探索古羅馬文明與美食。", link: "https://www.italia.it/en" },
-  { country: "西班牙", city: "馬德里", image: "/madrid.jpg", description: "感受熱情的弗拉明戈文化。", link: "https://www.spain.info/en/" },
-  { country: "英國", city: "倫敦", image: "/london.jpg", description: "見證歷史與現代的交匯。", link: "https://www.visitlondon.com/" },
-  { country: "澳洲", city: "雪梨", image: "/sydney.jpg", description: "觀賞標誌性的歌劇院。", link: "https://www.sydney.com/" },
-  { country: "德國", city: "柏林", image: "/berlin.jpg", description: "二戰歷史與藝術的融合。", link: "https://www.germany.travel/en/home.html" },
-  { country: "加拿大", city: "溫哥華", image: "/vancouver.jpg", description: "探索壯觀的自然景觀。", link: "https://www.destinationvancouver.com/" },
-  { country: "中國", city: "上海", image: "/shanghai.jpg", description: "融合傳統與現代的都市。", link: "https://www.travelchina.org.cn/" },
-  { country: "韓國", city: "首爾", image: "/seoul.jpg", description: "感受K-POP與傳統文化的交融。", link: "https://english.visitkorea.or.kr/" },
-  { country: "巴西", city: "里約熱內盧", image: "/rio.jpg", description: "沉浸於熱情的嘉年華氛圍。", link: "https://www.visitbrasil.com/" },
-  { country: "印度", city: "新德里", image: "/delhi.jpg", description: "體驗豐富的文化遺產。", link: "https://www.incredibleindia.org/" },
-  { country: "阿聯酋", city: "杜拜", image: "/dubai.jpg", description: "感受奢華與創新的建築奇蹟。", link: "https://www.visitdubai.com/" },
-  { country: "南非", city: "開普敦", image: "/capetown.jpg", description: "欣賞壯觀的桌山美景。", link: "https://www.southafrica.net/" },
-];
+    <!-- 更多目的地 -->
+    <section id="destinations">
+        <h2>熱門目的地</h2>
+        <div class="destination-grid">
+            <div class="destination-card">
+                <img src="images/paris.jpg" alt="巴黎">
+                <h3>巴黎</h3>
+                <p>浪漫之都</p>
+                <button class="book-btn" data-destination="巴黎">預訂</button>
+            </div>
+            <div class="destination-card">
+                <img src="images/tokyo.jpg" alt="東京">
+                <h3>東京</h3>
+                <p>東方明珠</p>
+                <button class="book-btn" data-destination="東京">預訂</button>
+            </div>
+            <div class="destination-card">
+                <img src="images/newyork.jpg" alt="紐約">
+                <h3>紐約</h3>
+                <p>不夜城</p>
+                <button class="book-btn" data-destination="紐約">預訂</button>
+            </div>
+            <div class="destination-card">
+                <img src="images/sydney.jpg" alt="雪梨">
+                <h3>雪梨</h3>
+                <p>港口之美</p>
+                <button class="book-btn" data-destination="雪梨">預訂</button>
+            </div>
+            <div class="destination-card">
+                <img src="images/rome.jpg" alt="羅馬">
+                <h3>羅馬</h3>
+                <p>歷史古城</p>
+                <button class="book-btn" data-destination="羅馬">預訂</button>
+            </div>
+            <div class="destination-card">
+                <img src="images/bali.jpg" alt="峇里島">
+                <h3>峇里島</h3>
+                <p>天堂島嶼</p>
+                <button class="book-btn" data-destination="峇里島">預訂</button>
+            </div>
+        </div>
+    </section>
 
-export default function TravelWebsite() {
-  const [language, setLanguage] = useState("zh");
+    <!-- 預訂表單 -->
+    <section id="booking">
+        <h2>預訂您的旅程</h2>
+        <form id="booking-form">
+            <label for="destination">目的地:</label>
+            <input type="text" id="destination" name="destination" readonly>
+            <label for="date">出發日期:</label>
+            <input type="date" id="date" name="date" required>
+            <label for="people">人數:</label>
+            <input type="number" id="people" name="people" min="1" required>
+            <button type="submit">提交預訂</button>
+        </form>
+    </section>
 
-  const bookFlight = (destination) => {
-    const flightBookingURL = `https://www.skyscanner.com/flights-to/${destination.city.toLowerCase()}`;
-    window.open(flightBookingURL, "_blank");
-  };
+    <!-- 聯絡表單 -->
+    <section id="contact">
+        <h2>聯絡我們</h2>
+        <form id="contact-form">
+            <label for="name">姓名:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">電子郵件:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">訊息:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">送出</button>
+        </form>
+    </section>
 
-  return (
-    <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 bg-cover bg-center min-h-screen" style={{ backgroundImage: "url('/travel-background.jpg')" }}>
-      <div className="flex justify-between w-full p-4">
-        <h1 className="text-3xl font-bold text-white drop-shadow-lg">🌍 全球旅遊探索</h1>
-        <Button onClick={() => setLanguage(language === "zh" ? "en" : "zh")}>
-          {language === "zh" ? "English" : "中文"}
-        </Button>
-      </div>
-      {destinations.map((destination, index) => (
-        <motion.div key={index} whileHover={{ scale: 1.1 }} className="shadow-xl rounded-2xl overflow-hidden transform transition duration-300 hover:shadow-2xl">
-          <Card>
-            <motion.img src={destination.image} alt={destination.city} className="w-full h-48 object-cover cursor-pointer" whileHover={{ scale: 1.05 }} onClick={() => window.open(destination.link, "_blank")} />
-            <CardContent className="p-4">
-              <h2 className="text-xl font-bold text-gray-800">{destination.city}, {destination.country}</h2>
-              <p className="text-gray-600 mt-2">{destination.description}</p>
-              <Button className="mt-2 bg-blue-500 text-white" onClick={() => bookFlight(destination)}>{translations[language].bookFlight}</Button>
-            </CardContent>
-          </Card>
-        </motion.div>
-      ))}
-    </div>
-  );
-}
+    <footer>
+        <p>© 2025 探索世界旅遊網</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
