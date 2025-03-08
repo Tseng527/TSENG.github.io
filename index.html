@@ -42,14 +42,19 @@
             margin-top: 30px;
         }
         .place, .food-item, .culture-item {
-            width: 300px;
+            width: 400px;
             padding: 20px;
             background: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
         }
         .place img, .food-item img, .culture-item img {
             width: 100%;
+            height: auto;
             border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .place img:hover, .food-item img:hover, .culture-item img:hover {
+            transform: scale(1.1);
         }
         .language-switch {
             margin: 20px;
@@ -80,53 +85,31 @@
             cursor: pointer;
         }
     </style>
-    <script>
-        function changeLanguage(lang) {
-            const elements = document.querySelectorAll('[data-lang]');
-            elements.forEach(el => {
-                el.innerText = el.getAttribute('data-' + lang);
-            });
-        }
-        function submitReview() {
-            alert('感謝您的評論！');
-        }
-    </script>
 </head>
 <body>
     <div class="container">
-        <div class="language-switch">
-            <button class="lang-btn" onclick="changeLanguage('zh')">中文</button>
-            <button class="lang-btn" onclick="changeLanguage('en')">English</button>
-            <button class="lang-btn" onclick="changeLanguage('ja')">日本語</button>
-        </div>
-        <h1 data-lang data-zh="探索冰島" data-en="Explore Iceland" data-ja="アイスランドを探検">探索冰島</h1>
-        <p data-lang data-zh="體驗壯麗的自然奇觀，沉浸在冰與火交融的國度。" data-en="Experience breathtaking nature in the land of fire and ice." data-ja="壮大な自然を体験し、火と氷の国に浸る。">體驗壯麗的自然奇觀，沉浸在冰與火交融的國度。</p>
+        <h1>探索冰島</h1>
+        <p>體驗壯麗的自然奇觀，沉浸在冰與火交融的國度。</p>
         <a href="https://www.skyscanner.com" class="button" target="_blank">預訂機票</a>
         <div class="places">
             <div class="place">
-                <img src="https://source.unsplash.com/300x200/?glacier-iceland" alt="冰川探險">
-                <h2 data-lang data-zh="冰川探險" data-en="Glacier Adventure" data-ja="氷河冒険">冰川探險</h2>
+                <img src="https://source.unsplash.com/400x300/?glacier-iceland" alt="冰川探險">
+                <h2>冰川探險</h2>
                 <p>探索冰島壯麗的冰川，體驗冰川健行與冰洞探險。</p>
             </div>
             <div class="place">
-                <img src="https://source.unsplash.com/300x200/?northern-lights-iceland" alt="極光觀賞">
-                <h2 data-lang data-zh="極光觀賞" data-en="Northern Lights Viewing" data-ja="オーロラ観察">極光觀賞</h2>
+                <img src="https://source.unsplash.com/400x300/?northern-lights-iceland" alt="極光觀賞">
+                <h2>極光觀賞</h2>
                 <p>夜晚觀賞壯麗的極光，體驗神秘的北國之美。</p>
             </div>
         </div>
-        <h2 data-lang data-zh="冰島文化" data-en="Icelandic Culture" data-ja="アイスランドの文化">冰島文化</h2>
+        <h2>冰島文化</h2>
         <div class="culture">
             <div class="culture-item">
-                <img src="https://source.unsplash.com/300x200/?viking" alt="維京歷史">
-                <h3 data-lang data-zh="維京歷史" data-en="Viking History" data-ja="バイキングの歴史">維京歷史</h3>
+                <img src="https://source.unsplash.com/400x300/?viking" alt="維京歷史">
+                <h3>維京歷史</h3>
                 <p>了解冰島的維京歷史與傳統文化，探索歷史遺跡。</p>
             </div>
-        </div>
-        <div class="review-section">
-            <h2 data-lang data-zh="分享您的體驗" data-en="Share Your Experience" data-ja="あなたの体験を共有">分享您的體驗</h2>
-            <textarea placeholder="寫下您的旅遊心得..."></textarea>
-            <br>
-            <button class="submit-btn" onclick="submitReview()">提交</button>
         </div>
     </div>
 </body>
