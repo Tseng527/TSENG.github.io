@@ -1,101 +1,113 @@
-import React, { useState } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-
-const translations = {
-  zh: {
-    title: "探索冰島",
-    description: "體驗壯麗的自然奇觀，沉浸在冰與火交融的國度。",
-    planTrip: "立即規劃您的旅程",
-    places: [
-      { name: "藍湖溫泉", description: "冰島最著名的地熱溫泉，擁有療癒的礦物質水。" },
-      { name: "黃金圈", description: "包括辛格維利爾國家公園、間歇泉與黃金瀑布的經典旅遊路線。" },
-      { name: "黑沙灘", description: "壯觀的火山黑沙與玄武岩石柱，帶來神秘的美感。" },
-      { name: "冰河湖", description: "Jökulsárlón 冰河湖，漂浮著壯觀的藍色冰山，是攝影愛好者的天堂。" }
-    ]
-  },
-  en: {
-    title: "Explore Iceland",
-    description: "Experience breathtaking natural wonders and immerse yourself in the land of fire and ice.",
-    planTrip: "Plan Your Trip Now",
-    places: [
-      { name: "Blue Lagoon", description: "Iceland’s most famous geothermal spa, known for its healing mineral waters." },
-      { name: "Golden Circle", description: "A classic route covering Thingvellir National Park, Geysir, and Gullfoss Waterfall." },
-      { name: "Black Sand Beach", description: "Dramatic volcanic black sand and basalt columns create a mysterious beauty." },
-      { name: "Jökulsárlón Glacier Lagoon", description: "A stunning lagoon filled with floating blue icebergs, perfect for photography." }
-    ]
-  },
-  ja: {
-    title: "アイスランドを探検",
-    description: "壮大な自然の驚異を体験し、火と氷の国に浸ってください。",
-    planTrip: "今すぐ旅行を計画する",
-    places: [
-      { name: "ブルーラグーン", description: "アイスランドで最も有名な温泉で、治癒力のあるミネラルウォーターが特徴。" },
-      { name: "ゴールデンサークル", description: "シンクヴェトリル国立公園、ゲイシール、グトルフォスの滝を巡る定番ルート。" },
-      { name: "ブラックサンドビーチ", description: "火山の黒い砂と玄武岩の柱が神秘的な美しさを演出。" },
-      { name: "ヨークルスアゥルロゥン氷河湖", description: "青い氷山が浮かぶ壮大なラグーン、写真撮影に最適。" }
-    ]
-  }
-};
-
-export default function IcelandTravel() {
-  const [language, setLanguage] = useState("zh");
-  const t = translations[language];
-
-  return (
-    <div className="p-8 max-w-6xl mx-auto bg-[url('/images/northern-lights.jpg')] bg-cover bg-center min-h-screen text-white">
-      <div className="flex justify-end space-x-4 mb-6">
-        <Button onClick={() => setLanguage("zh")} className="text-white bg-blue-500 px-4 py-2 rounded">中文</Button>
-        <Button onClick={() => setLanguage("en")} className="text-white bg-blue-500 px-4 py-2 rounded">English</Button>
-        <Button onClick={() => setLanguage("ja")} className="text-white bg-blue-500 px-4 py-2 rounded">日本語</Button>
-      </div>
-      <motion.h1 
-        className="text-4xl font-extrabold text-center text-green-300 mb-6 drop-shadow-lg" 
-        initial={{ opacity: 0, y: -20 }} 
-        animate={{ opacity: 1, y: 0 }}
-      >
-        {t.title}
-      </motion.h1>
-      <p className="text-center text-gray-200 text-lg mb-8 drop-shadow-lg">
-        {t.description}
-      </p>
-      <motion.img 
-        src="/images/iceland-landscape.jpg" 
-        alt="Iceland Landscape" 
-        className="w-full h-80 object-cover rounded-2xl shadow-lg mb-10" 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      />
-      <div className="grid md:grid-cols-2 gap-8">
-        {t.places.map((place, index) => (
-          <motion.div 
-            key={index} 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3, delay: index * 0.2 }}
-          >
-            <Card className="overflow-hidden shadow-xl rounded-2xl transform hover:scale-105 transition duration-300 bg-black bg-opacity-60">
-              <CardContent className="p-6 text-white">
-                <h2 className="text-2xl font-semibold text-green-300 mb-3">{place.name}</h2>
-                <p className="text-gray-300 text-sm">{place.description}</p>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
-      </div>
-      <div className="text-center mt-12 space-y-4">
-        <motion.a 
-          href="https://www.skyscanner.com" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="px-8 py-3 text-lg font-semibold text-white bg-green-500 rounded-full shadow-md hover:bg-green-600 transition duration-300"
-          whileHover={{ scale: 1.1 }}
-        >
-          {t.planTrip}
-        </motion.a>
-      </div>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>探索冰島 | Iceland Travel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://source.unsplash.com/1600x900/?iceland,northern-lights') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            padding: 50px;
+        }
+        h1 {
+            font-size: 3em;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            background: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .places, .food {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .place, .food-item {
+            width: 300px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+        .language-switch {
+            margin: 20px;
+        }
+        .lang-btn {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            background: #007BFF;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(el => {
+                el.innerText = el.getAttribute('data-' + lang);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="language-switch">
+            <button class="lang-btn" onclick="changeLanguage('zh')">中文</button>
+            <button class="lang-btn" onclick="changeLanguage('en')">English</button>
+            <button class="lang-btn" onclick="changeLanguage('ja')">日本語</button>
+        </div>
+        <h1 data-lang data-zh="探索冰島" data-en="Explore Iceland" data-ja="アイスランドを探検">探索冰島</h1>
+        <p data-lang data-zh="體驗壯麗的自然奇觀，沉浸在冰與火交融的國度。" data-en="Experience breathtaking nature in the land of fire and ice." data-ja="壮大な自然を体験し、火と氷の国に浸る。">體驗壯麗的自然奇觀，沉浸在冰與火交融的國度。</p>
+        <a href="https://www.skyscanner.com" class="button" target="_blank">預訂機票</a>
+        <div class="places">
+            <div class="place">
+                <h2 data-lang data-zh="藍湖溫泉" data-en="Blue Lagoon" data-ja="ブルーラグーン">藍湖溫泉</h2>
+                <p>冰島最著名的地熱溫泉，擁有療癒的礦物質水。</p>
+            </div>
+            <div class="place">
+                <h2 data-lang data-zh="黃金圈" data-en="Golden Circle" data-ja="ゴールデンサークル">黃金圈</h2>
+                <p>經典旅遊路線，包括間歇泉與黃金瀑布。</p>
+            </div>
+            <div class="place">
+                <h2 data-lang data-zh="黑沙灘" data-en="Black Sand Beach" data-ja="ブラックサンドビーチ">黑沙灘</h2>
+                <p>壯觀的火山黑沙與玄武岩石柱，帶來神秘的美感。</p>
+            </div>
+        </div>
+        <h2 data-lang data-zh="冰島美食" data-en="Icelandic Cuisine" data-ja="アイスランド料理">冰島美食</h2>
+        <div class="food">
+            <div class="food-item">
+                <h3 data-lang data-zh="發酵鯊魚" data-en="Fermented Shark" data-ja="発酵サメ">發酵鯊魚</h3>
+                <p>傳統的冰島發酵魚，風味獨特。</p>
+            </div>
+            <div class="food-item">
+                <h3 data-lang data-zh="羊肉湯" data-en="Lamb Soup" data-ja="ラムスープ">羊肉湯</h3>
+                <p>冰島經典羊肉湯，溫暖你的胃。</p>
+            </div>
+            <div class="food-item">
+                <h3 data-lang data-zh="冰島熱狗" data-en="Icelandic Hot Dog" data-ja="アイスランドのホットドッグ">冰島熱狗</h3>
+                <p>冰島最受歡迎的街頭小吃，口感絕佳。</p>
+            </div>
+        </div>
     </div>
-  );
-}
+</body>
+</html>
