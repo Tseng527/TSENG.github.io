@@ -1,44 +1,16 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yu-Hsiang Tseng's Personal Profile - My Final Project</title>
-    <meta name="description" content="Zeng Yuxiang's Personal Profile, including Hobbies, Education, and Future Goals。">
-    <style>
-        body{background-color: #ADD8E6;}
-    </style>
+    <title>響應式圖片示例</title>
 </head>
 <body>
-    <h1>My Final Project</h1>
-    <a href="https://www.bing.com/ck/a?!&&p=89c665e7c8aed6fa8cbd3ae290538f031aa39a881e164dc2d2527ebf3af26c38JmltdHM9MTc0MDk2MDAwMA&ptn=3&ver=2&hsh=4&fclid=3bbf238a-33f8-6e88-2910-3041326c6f75&psq=%e7%ab%b9%e5%8c%97&u=a1aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU3JUFCJUI5JUU1JThDJTk3JUU1JUI4JTgy&ntb=1">
-    <img src="https://th.bing.com/th/id/OIP.QDcY9vRsFPs0_ZNHtsbG7AAAAA?rs=1&pid=ImgDetMain" alt="Click here to visit the website"  width="300" height="200">
-    </a>
-    <hr>
-
-    <h2>Personal Information</h2>
-    <ul>
-        <li>Name: YU HSIANG TSENG</li>
-        <li>Gender: Male</li>
-        <li>Age: 18 years old</li>
-        <li>Phone number:<a href="tel:+886966769955"> 0966-769-955</a></li>
-        <li>Email:<a href="mailto:eaglecomtw386@gmail.com"> eaglecomtw386@gmail.com</a></li>
-        <li>Address: Zhubei City, Hsinchu County</li>
-    </ul>
-
-    <p>
-        I am from Zhubei City, Hsinchu County, which is an important hub for Taiwan's technology industry. I am currently studying in the Department of Green Energy and Information Technology at <strong>National Taitung University</strong>, and I hope to work in the semiconductor industry or in a mechanical-related field in the future. During my academic journey, I served as a class officer, learning how to communicate with others and manage time. Through participating in extracurricular activities, I improved my teamwork skills and learned how to interact with people from different backgrounds.I am responsible, helpful, and always strive to complete the tasks assigned to me, whether in daily life or at work. I believe that growth comes from challenges, so I am open to new learning opportunities and continuously strive to improve my professional skills.
-    </p>
-
-    <h2>Hobbies</h2>
-    <p>I love jogging. Through jogging, I have built endurance and willpower, and also developed self-discipline and perseverance. I believe these traits will help me stay organized and continue making progress in both work and studies.
-    </p>
-    <button onclick="alert('Thank you for your visit！')">Click me</button>
-
-    <hr>
-
-    <h2>Related Links</h2>
-    <p><a href="https://www.nttu.edu.tw" target="_blank">National Taitung University</a></p>
-    <p><a href="https://git.nttu.edu.tw" target="_blank">National Taitung University - Department of Green Energy and Information Technology</a></p>
+    <picture>
+        <source media="(min-width: 1024px)" srcset="123.jpg">
+        <source media="(max-width: 1023px) and (min-width: 640px)" srcset="123.jpg">
+        <source media="(max-width: 639px)" srcset="123.jpg">
+        <img src="123.jpg" alt="fallback image">
+    </picture>
 </body>
 </html>
