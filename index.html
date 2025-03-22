@@ -13,6 +13,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Delius&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <style>
+    body {
+    font-family: "Delius", cursive;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #f2f2f2;
+    text-align: center; /* 讓文字內容置中 */
+}
+
+h1, h2, p {
+    text-align: center; /* 標題和段落置中 */
+}
+
+ul {
+    display: inline-block;
+    text-align: left; /* 防止 ul 內文也置中，保持正常排版 */
+}
+
+img {
+    display: block;
+    margin: 0 auto; /* 讓圖片置中 */
+}
+
+iframe {
+    display: block;
+    margin: 0 auto; /* 讓 iframe (地圖與影片) 置中 */
+}
+
+button {
+    display: block;
+    margin: 10px auto; /* 讓按鈕置中 */
+}
+
+div {
+    display: flex;
+    justify-content: center; /* 讓 div 內的圖片等元素置中 */
+    flex-wrap: wrap; /* 避免圖片過多時溢出 */
+}
+
+</style>
+<style>
 body {
   font-family: "Delius", cursive;
   font-weight: 400;
@@ -73,6 +113,12 @@ body {
     <img src="https://i2.wp.com/blog.tripbaa.com/wp-content/uploads/2018/07/plan_2017101716385610512_b.jpg?fit=1024%2C576&ssl=1" alt="嘉明湖" width="300" height="200">
     </div>
     </a>
+
+    <hr>
+
+    <h2>This is about my video</h2>
+    <p>This is my video</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/efeT4x3E7Zo?si=N0n9F9_6AJB6WLNf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     
 <br>
     <button onclick="handleClick()">Click to like</button>
@@ -96,11 +142,6 @@ body {
     localStorage.setItem('clickCount', count);
   }
 </script>
-    <form>
-        <label>帳號:<input type="Text" size="6" maxlength="6"></label><br>
-        <label>密碼:<input type="Password" size="6" maxlength="6"></label>
-
-    </form>
 
 
     <hr>
@@ -109,7 +150,6 @@ body {
     <p><a href="https://www.nttu.edu.tw" target="_blank">National Taitung University</a></p>
     <p><a href="https://git.nttu.edu.tw" target="_blank">National Taitung University - Department of Green Energy and Information Technology</a></p>
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/LSkq-wHMxQY?si=qCjy8q357dJiu4AU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     
 </body>
 </html>
