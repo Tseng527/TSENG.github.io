@@ -104,15 +104,46 @@ body {
     <hr>
 
     <h2>Photo Gallery</h2>
-    <p>Here are some of my pictures</p>
-    <a>
-    <div style="display: flex; justify-content: space-between;">
-    <img src="https://yt3.ggpht.com/QXdTeboQRBFKpzQmws2CEP5zgDoHGScYfq7Dks7Gnzmp38jl603Hs-cL58rxJaMch8vhmgwUoYfE=s1600-c-fcrop64=1,38000000c7ffffff-rw-nd-v1" alt="黑部立山" width="300" height="200">
-    <img src="https://yt3.ggpht.com/BwdORtXA9-p0kEbUuynyAhz6IbIOFVqnBCiJB5Iq7ruDRXzbrfLxZs0Un49RxvcRt1sjzx4-BH6u=s800-c-fcrop64=1,38000000c7ffffff-rw-nd-v1" alt="台北市" width="300" height="200">
-    <img src="https://yt3.ggpht.com/9SAYY8ZF3koMt-t9J8mwZLiuRJbj539BDzQBF78WT3aAg_6FZlIsGGEOq-6hpkvdNfVkqyD91iFvpg=s1108-c-fcrop64=1,1ffa0000e005ffff-rw-nd-v1" alt="後壁湖潛水" width="300" height="200">
-    <img src="https://yt3.ggpht.com/qvoR5Wwq4hbhq6-fNF5fQsVel3Em5pH8QPDIjhbyVqDo-YEHY7UQs3vizcRQqIOD_tcVaz8zkanvSg=s1600-c-fcrop64=1,38000000c7ffffff-rw-nd-v1" alt="華源觀景平台" width="300" height="200">
-    </div>
-    </a>
+<p>Here are some of my pictures:</p>
+
+<style>
+  .photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .photo-gallery img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid #333;
+    border-radius: 12px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .photo-gallery img:hover {
+    transform: scale(1.03);
+    border-color: #007bff; /* 藍色邊框 */
+  }
+</style>
+
+<div class="photo-gallery">
+  <a href="#">
+    <img src="https://yt3.ggpht.com/QXdTeboQRBFKpzQmws2CEP5zgDoHGScYfq7Dks7Gnzmp38jl603Hs-cL58rxJaMch8vhmgwUoYfE=s1600-c-fcrop64=1,38000000c7ffffff-rw-nd-v1" alt="黑部立山">
+  </a>
+  <a href="#">
+    <img src="https://yt3.ggpht.com/BwdORtXA9-p0kEbUuynyAhz6IbIOFVqnBCiJB5Iq7ruDRXzbrfLxZs0Un49RxvcRt1sjzx4-BH6u=s800-c-fcrop64=1,38000000c7ffffff-rw-nd-v1" alt="台北市">
+  </a>
+  <a href="#">
+    <img src="https://yt3.ggpht.com/9SAYY8ZF3koMt-t9J8mwZLiuRJbj539BDzQBF78WT3aAg_6FZlIsGGEOq-6hpkvdNfVkqyD91iFvpg=s1108-c-fcrop64=1,1ffa0000e005ffff-rw-nd-v1" alt="後壁湖潛水">
+  </a>
+  <a href="#">
+    <img src="https://yt3.ggpht.com/qvoR5Wwq4hbhq6-fNF5fQsVel3Em5pH8QPDIjhbyVqDo-YEHY7UQs3vizcRQqIOD_tcVaz8zkanvSg=s1600-c-fcrop64=1,38000000c7ffffff-rw-nd-v1" alt="華源觀景平台">
+  </a>
+</div>
+
 
     <hr>
 
