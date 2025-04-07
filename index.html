@@ -110,39 +110,101 @@ body {
   .photo-gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px;
+    gap: 30px;
+    justify-content: center;
   }
 
-  .photo-gallery img {
+  .polaroid {
+    background: white;
+    padding: 10px 10px 25px 10px;
     width: 300px;
+    height: 260px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .polaroid img {
+    width: 100%;
     height: 200px;
     object-fit: cover;
-    border: 2px solid #333;
-    border-radius: 12px;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    border-radius: 4px;
   }
 
-  .photo-gallery img:hover {
-    transform: scale(1.03);
-    border-color: #007bff; /* 藍色邊框 */
+  .caption {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    color: #555;
+    margin-top: 8px;
+  }
+
+  /* 膠帶效果 */
+  .tape {
+    width: 80px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px dashed #aaa;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-5deg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 2;
+  }
+
+  /* 每張圖的旋轉角度 */
+  .polaroid:nth-child(1) {
+    transform: rotate(-2deg);
+  }
+
+  .polaroid:nth-child(2) {
+    transform: rotate(2.5deg);
+  }
+
+  .polaroid:nth-child(3) {
+    transform: rotate(-1.5deg);
+  }
+
+  .polaroid:nth-child(4) {
+    transform: rotate(1.8deg);
+  }
+
+  /* Hover 清除旋轉、放大 */
+  .polaroid:hover {
+    transform: scale(1.05) rotate(0deg);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+    z-index: 3;
   }
 </style>
 
 <div class="photo-gallery">
-  <a href="#">
+  <div class="polaroid">
+    <div class="tape"></div>
     <img src="https://yt3.ggpht.com/QXdTeboQRBFKpzQmws2CEP5zgDoHGScYfq7Dks7Gnzmp38jl603Hs-cL58rxJaMch8vhmgwUoYfE=s1600-c-fcrop64=1,38000000c7ffffff-rw-nd-v1" alt="黑部立山">
-  </a>
-  <a href="#">
+    <div class="caption">黑部立山</div>
+  </div>
+
+  <div class="polaroid">
+    <div class="tape" style="transform: translateX(-50%) rotate(3deg);"></div>
     <img src="https://yt3.ggpht.com/BwdORtXA9-p0kEbUuynyAhz6IbIOFVqnBCiJB5Iq7ruDRXzbrfLxZs0Un49RxvcRt1sjzx4-BH6u=s800-c-fcrop64=1,38000000c7ffffff-rw-nd-v1" alt="台北市">
-  </a>
-  <a href="#">
+    <div class="caption">台北市</div>
+  </div>
+
+  <div class="polaroid">
+    <div class="tape" style="transform: translateX(-50%) rotate(-4deg);"></div>
     <img src="https://yt3.ggpht.com/9SAYY8ZF3koMt-t9J8mwZLiuRJbj539BDzQBF78WT3aAg_6FZlIsGGEOq-6hpkvdNfVkqyD91iFvpg=s1108-c-fcrop64=1,1ffa0000e005ffff-rw-nd-v1" alt="後壁湖潛水">
-  </a>
-  <a href="#">
+    <div class="caption">後壁湖潛水</div>
+  </div>
+
+  <div class="polaroid">
+    <div class="tape" style="transform: translateX(-50%) rotate(5deg);"></div>
     <img src="https://yt3.ggpht.com/qvoR5Wwq4hbhq6-fNF5fQsVel3Em5pH8QPDIjhbyVqDo-YEHY7UQs3vizcRQqIOD_tcVaz8zkanvSg=s1600-c-fcrop64=1,38000000c7ffffff-rw-nd-v1" alt="華源觀景平台">
-  </a>
+    <div class="caption">華源觀景平台</div>
+  </div>
 </div>
+
 
 
     <hr>
