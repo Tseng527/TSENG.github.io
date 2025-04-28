@@ -1,269 +1,251 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yu-Hsiang Tseng's Personal Profile - My Final Project</title>
-  <meta name="description" content="Zeng Yuxiang's Personal Profile, including Hobbies, Education, and Future Goals。">
-  
-  <!-- 字型 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Delius&family=Pacifico&display=swap" rel="stylesheet">
-
-  <style>
-    /* 整體版型 */
-    body {
-      margin: 0;
-      background-color: #f2f2f2;
-      font-family: "Delius", cursive;
-      color: #333;
-    }
-
-    .container {
-      display: flex;
-      min-height: 100vh;
-    }
-
-    /* 左側欄 */
-    .sidebar {
-      width: 250px;
-      background-color: #0a0f24;
-      color: #ffffff;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      position: sticky;
-      top: 0;
-      height: 100vh;
-    }
-
-    .sidebar h2 {
-      font-family: 'Pacifico', cursive;
-      font-size: 24px;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    .sidebar a {
-      color: #ffffff;
-      text-decoration: none;
-      margin: 10px 0;
-      display: block;
-      padding: 8px 12px;
-      border-radius: 6px;
-      transition: background-color 0.3s;
-      font-size: 16px;
-    }
-
-    .sidebar a:hover {
-      background-color: #1e2a57;
-    }
-
-    /* 右側內容 */
-    .content {
-      flex: 1;
-      padding: 30px;
-      background-color: #f2f2f2;
-      overflow-x: hidden;
-    }
-
-    h1, h2, p, ul {
-      text-align: center;
-    }
-
-    ul {
-      display: inline-block;
-      text-align: left;
-    }
-
-    img, iframe, button {
-      display: block;
-      margin: 0 auto;
-    }
-
-    div {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    /* Photo Gallery (沿用你的設定) */
-    .photo-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
-    }
-
-    .polaroid {
-      background: white;
-      padding: 10px 10px 25px 10px;
-      width: 300px;
-      height: 260px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-      border-radius: 8px;
-      text-align: center;
-      position: relative;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .polaroid img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 4px;
-    }
-
-    .caption {
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 14px;
-      color: #555;
-      margin-top: 8px;
-    }
-
-    .tape {
-      width: 80px;
-      height: 20px;
-      background: rgba(255, 255, 255, 0.6);
-      border: 1px dashed #aaa;
-      position: absolute;
-      top: -10px;
-      left: 50%;
-      transform: translateX(-50%) rotate(-5deg);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      z-index: 2;
-    }
-
-    .polaroid:nth-child(1) { transform: rotate(-2deg); }
-    .polaroid:nth-child(2) { transform: rotate(2.5deg); }
-    .polaroid:nth-child(3) { transform: rotate(-1.5deg); }
-    .polaroid:nth-child(4) { transform: rotate(1.8deg); }
-
-    .polaroid:hover {
-      transform: scale(1.05) rotate(0deg);
-      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
-      z-index: 3;
-    }
-  </style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yu-Hsiang Tseng's Personal Profile - My Final Project</title>
+    <meta name="description" content="Zeng Yuxiang's Personal Profile, including Hobbies, Education, and Future Goals。">
+    <style>
+        body{background-color: #f2f2f2;}
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Pacifico&display=swap" rel="stylesheet">
 </head>
+<style>
+    body {
+    font-family: "Delius", cursive;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #f2f2f2;
+    text-align: center; /* 讓文字內容置中 */
+}
 
+h1, h2, p {
+    text-align: center; /* 標題和段落置中 */
+}
+
+ul {
+    display: inline-block;
+    text-align: left; /* 防止 ul 內文也置中，保持正常排版 */
+}
+
+img {
+    display: block;
+    margin: 0 auto; /* 讓圖片置中 */
+}
+
+iframe {
+    display: block;
+    margin: 0 auto; /* 讓 iframe (地圖與影片) 置中 */
+}
+
+button {
+    display: block;
+    margin: 10px auto; /* 讓按鈕置中 */
+}
+
+div {
+    display: flex;
+    justify-content: center; /* 讓 div 內的圖片等元素置中 */
+    flex-wrap: wrap; /* 避免圖片過多時溢出 */
+}
+
+</style>
+<style>
+body {
+  font-family: "Delius", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+</style>
 <body>
+    <h1>Yu-Hsiang Tseng's Personal Profile</h1>
+    <a href="https://www.bing.com/ck/a?!&&p=89c665e7c8aed6fa8cbd3ae290538f031aa39a881e164dc2d2527ebf3af26c38JmltdHM9MTc0MDk2MDAwMA&ptn=3&ver=2&hsh=4&fclid=3bbf238a-33f8-6e88-2910-3041326c6f75&psq=%e7%ab%b9%e5%8c%97&u=a1aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU3JUFCJUI5JUU1JThDJTk3JUU1JUI4JTgy&ntb=1">
+    <img src="https://th.bing.com/th/id/OIP.QDcY9vRsFPs0_ZNHtsbG7AAAAA?rs=1&pid=ImgDetMain" alt="Click here to visit the website" width="300" height="200">
+    </a>
 
-  <div class="container">
-    
-    <!-- 左側欄 -->
-    <aside class="sidebar">
-      <h2>Yu-Hsiang</h2>
-      <a href="#personal-info">個人資料</a>
-      <a href="#hobbies">興趣</a>
-      <a href="#photo-gallery">相簿</a>
-      <a href="#video">影片</a>
-      <a href="#links">相關連結</a>
-    </aside>
+    <hr>
 
-    <!-- 右側內容 -->
-    <main class="content">
-
-      <h1>Yu-Hsiang Tseng's Personal Profile</h1>
-      <a href="https://www.bing.com/ck/a?!&&p=89c665e7c8aed6fa8cbd3ae290538f031aa39a881e164dc2d2527ebf3af26c38JmltdHM9MTc0MDk2MDAwMA&ptn=3&ver=2&hsh=4&fclid=3bbf238a-33f8-6e88-2910-3041326c6f75&psq=%e7%ab%b9%e5%8c%97&u=a1aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU3JUFCJUI5JUU1JThDJTk3JUU1JUI4JTgy&ntb=1">
-        <img src="https://th.bing.com/th/id/OIP.QDcY9vRsFPs0_ZNHtsbG7AAAAA?rs=1&pid=ImgDetMain" alt="Click here to visit the website" width="300" height="200">
-      </a>
-
-      <hr>
-
-      <h2 id="personal-info">Personal Information</h2>
-      <ul>
+    <h2>Personal Information</h2>
+    <ul>
         <li>Name: TSENG YU HSIANG</li>
         <li>Gender: Male</li>
-        <li>Age: 19</li>
+        <li>Age: 19 </li>
         <li>Phone number:<a href="tel:+886966769955"> 0966-769-955</a></li>
         <li>Email:<a href="mailto:eaglecomtw386@gmail.com"> eaglecomtw386@gmail.com</a></li>
         <li>Address: No. 6, Lane 57, Fulu 2nd Street, Xinpu Township, Hsinchu County, Taiwan.</li>
-        <button onclick="openMap()">Navigate to Address</button>
-      </ul>
+        <li>Education: Hsinchu County Cheng-Gong Junior High School,National Kuan-Hsi Senior High School,National Taitung University</li>
 
-      <script>
-        function openMap() {
-          let destination = "24.833608,121.030121";
-          window.open(`https://www.google.com/maps/dir/?api=1&destination=${destination}`, '_blank');
-        }
-      </script>
+<script>
+  function openMap() {
+    // 導航的目的地（經緯度）
+    let destination = "24.833608,121.030121";
+    
+    // 使用 Google 地圖導航
+    window.open(`https://www.google.com/maps/dir/?api=1&destination=${destination}`, '_blank');
+  }
+</script>
+    </ul>
 
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.879658891485!2d121.02546198265001!3d24.833788721083803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346836de53e81cb3%3A0x21cac7ec4309af3d!2zMzA15paw56u557ij5paw5Z-U6Y6u56aP56W_5LqM6KGXNTfomZ8!5e0!3m2!1szh-TW!2stw!4v1741616464337!5m2!1szh-TW!2stw" width="320" height="240" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.879658891485!2d121.02546198265001!3d24.833788721083803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346836de53e81cb3%3A0x21cac7ec4309af3d!2zMzA15paw56u557ij5paw5Z-U6Y6u56aP56W_5LqM6KGXNTfomZ8!5e0!3m2!1szh-TW!2stw!4v1741616464337!5m2!1szh-TW!2stw" width="320" height="240" style="border:0;position: relative;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-      <p>
-         I am from <strong>Zhubei City, Hsinchu County</strong>, which is an important hub for Taiwan's technology industry. I am currently studying in the Department of Green Energy and Information Technology at <strong>National Taitung University</strong>, and I hope to work in the semiconductor industry or in a mechanical-related field in the future. During my academic journey, I served as a class officer, learning how to communicate with others and manage time. Through participating in extracurricular activities, I improved my teamwork skills and learned how to interact with people from different backgrounds.I am responsible, helpful, and always strive to complete the tasks assigned to me, whether in daily life or at work. I believe that growth comes from challenges, so I am open to new learning opportunities and continuously strive to improve my professional skills.
+    <p>
+        I am from <strong>Zhubei City, Hsinchu County</strong>, which is an important hub for Taiwan's technology industry. I am currently studying in the Department of Green Energy and Information Technology at <strong>National Taitung University</strong>, and I hope to work in the semiconductor industry or in a mechanical-related field in the future. During my academic journey, I served as a class officer, learning how to communicate with others and manage time. Through participating in extracurricular activities, I improved my teamwork skills and learned how to interact with people from different backgrounds.I am responsible, helpful, and always strive to complete the tasks assigned to me, whether in daily life or at work. I believe that growth comes from challenges, so I am open to new learning opportunities and continuously strive to improve my professional skills.
+    </p>
 
-      <hr>
+    <hr>
 
-      <h2 id="hobbies">Hobbies</h2>
-      <p>I love jogging. Through jogging, I have built endurance and willpower, and also developed self-discipline and perseverance. I believe these traits will help me stay organized and continue making progress in both work and studies.</p>
+    <h2>Hobbies</h2>
+    <p>I love jogging. Through jogging, I have built endurance and willpower, and also developed self-discipline and perseverance. I believe these traits will help me stay organized and continue making progress in both work and studies.
+    </p>
 
-      <hr>
+    <hr>
 
-      <h2 id="photo-gallery">Photo Gallery</h2>
-      <p>Here are some of my pictures:</p>
+    <h2>Photo Gallery</h2>
+<p>Here are some of my pictures:</p>
 
-      <div class="photo-gallery">
-        <!-- 你的相簿內容（保留原樣） -->
-        <div class="polaroid">
-          <div class="tape"></div>
-          <img src="https://yt3.ggpht.com/QXdTeboQRBFKpzQmws2CEP5zgDoHGScYfq7Dks7Gnzmp38jl603Hs-cL58rxJaMch8vhmgwUoYfE=s1600-c-fcrop64=1,38000000c7ffffff-rw-nd-v1" alt="黑部立山">
-          <div class="caption">黑部立山</div>
-        </div>
+<style>
+  .photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
 
-        <div class="polaroid">
-          <div class="tape" style="transform: translateX(-50%) rotate(3deg);"></div>
-          <img src="https://yt3.ggpht.com/BwdORtXA9-p0kEbUuynyAhz6IbIOFVqnBCiJB5Iq7ruDRXzbrfLxZs0Un49RxvcRt1sjzx4-BH6u=s800-c-fcrop64=1,38000000c7ffffff-rw-nd-v1" alt="台北市">
-          <div class="caption">台北市</div>
-        </div>
+  .polaroid {
+    background: white;
+    padding: 10px 10px 25px 10px;
+    width: 300px;
+    height: 260px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
-        <div class="polaroid">
-          <div class="tape" style="transform: translateX(-50%) rotate(-4deg);"></div>
-          <img src="https://yt3.ggpht.com/9SAYY8ZF3koMt-t9J8mwZLiuRJbj539BDzQBF78WT3aAg_6FZlIsGGEOq-6hpkvdNfVkqyD91iFvpg=s1108-c-fcrop64=1,1ffa0000e005ffff-rw-nd-v1" alt="後壁湖潛水">
-          <div class="caption">後壁湖潛水</div>
-        </div>
+  .polaroid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
 
-        <div class="polaroid">
-          <div class="tape" style="transform: translateX(-50%) rotate(5deg);"></div>
-          <img src="https://yt3.ggpht.com/qvoR5Wwq4hbhq6-fNF5fQsVel3Em5pH8QPDIjhbyVqDo-YEHY7UQs3vizcRQqIOD_tcVaz8zkanvSg=s1600-c-fcrop64=1,38000000c7ffffff-rw-nd-v1" alt="華源觀景平台">
-          <div class="caption">華源觀景平台</div>
-        </div>
-      </div>
+  .caption {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    color: #555;
+    margin-top: 8px;
+  }
 
-      <hr>
+  /* 膠帶效果 */
+  .tape {
+    width: 80px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px dashed #aaa;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-5deg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 2;
+  }
 
-      <h2 id="video">This is about my video</h2>
-      <p>This is my video</p>
+  /* 每張圖的旋轉角度 */
+  .polaroid:nth-child(1) {
+    transform: rotate(-2deg);
+  }
 
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/efeT4x3E7Zo?si=N0n9F9_6AJB6WLNf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  .polaroid:nth-child(2) {
+    transform: rotate(2.5deg);
+  }
 
-      <br>
-      <button onclick="handleClick()">Click to like</button>
-      <p id="counter">Button clicked: 0 times</p>
+  .polaroid:nth-child(3) {
+    transform: rotate(-1.5deg);
+  }
 
-      <script>
-        let count = localStorage.getItem('clickCount') ? parseInt(localStorage.getItem('clickCount')) : 0;
-        document.getElementById('counter').innerText = `Button clicked: ${count} times`;
-        function handleClick() {
-          count++;
-          alert('Thank you for your visit！');
-          document.getElementById('counter').innerText = `Button clicked: ${count} times`;
-          localStorage.setItem('clickCount', count);
-        }
-      </script>
+  .polaroid:nth-child(4) {
+    transform: rotate(1.8deg);
+  }
 
-      <hr style="height:2px;background-color:blue">
+  /* Hover 清除旋轉、放大 */
+  .polaroid:hover {
+    transform: scale(1.05) rotate(0deg);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+    z-index: 3;
+  }
+</style>
 
-      <h2 id="links">Related Links</h2>
-      <p><a href="https://www.nttu.edu.tw" target="_blank">National Taitung University</a></p>
-      <p><a href="https://git.nttu.edu.tw" target="_blank">National Taitung University - Department of Green Energy and Information Technology</a></p>
-
-    </main>
-
+<div class="photo-gallery">
+  <div class="polaroid">
+    <div class="tape"></div>
+    <img src="https://yt3.ggpht.com/QXdTeboQRBFKpzQmws2CEP5zgDoHGScYfq7Dks7Gnzmp38jl603Hs-cL58rxJaMch8vhmgwUoYfE=s1600-c-fcrop64=1,38000000c7ffffff-rw-nd-v1" alt="黑部立山">
+    <div class="caption">黑部立山</div>
   </div>
 
+  <div class="polaroid">
+    <div class="tape" style="transform: translateX(-50%) rotate(3deg);"></div>
+    <img src="https://yt3.ggpht.com/BwdORtXA9-p0kEbUuynyAhz6IbIOFVqnBCiJB5Iq7ruDRXzbrfLxZs0Un49RxvcRt1sjzx4-BH6u=s800-c-fcrop64=1,38000000c7ffffff-rw-nd-v1" alt="台北市">
+    <div class="caption">台北市</div>
+  </div>
+
+  <div class="polaroid">
+    <div class="tape" style="transform: translateX(-50%) rotate(-4deg);"></div>
+    <img src="https://yt3.ggpht.com/9SAYY8ZF3koMt-t9J8mwZLiuRJbj539BDzQBF78WT3aAg_6FZlIsGGEOq-6hpkvdNfVkqyD91iFvpg=s1108-c-fcrop64=1,1ffa0000e005ffff-rw-nd-v1" alt="後壁湖潛水">
+    <div class="caption">後壁湖潛水</div>
+  </div>
+
+  <div class="polaroid">
+    <div class="tape" style="transform: translateX(-50%) rotate(5deg);"></div>
+    <img src="https://yt3.ggpht.com/qvoR5Wwq4hbhq6-fNF5fQsVel3Em5pH8QPDIjhbyVqDo-YEHY7UQs3vizcRQqIOD_tcVaz8zkanvSg=s1600-c-fcrop64=1,38000000c7ffffff-rw-nd-v1" alt="華源觀景平台">
+    <div class="caption">華源觀景平台</div>
+  </div>
+</div>
+
+
+
+    <hr>
+
+    <h2>This is about my video</h2>
+    <p>This is my video</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/efeT4x3E7Zo?si=N0n9F9_6AJB6WLNf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
+<br>
+    <button onclick="handleClick()">Click to like</button>
+<p id="counter">Button clicked: 0 times</p>
+
+<script>
+  // 讀取 localStorage 中的點擊次數，若無則設為 0
+  let count = localStorage.getItem('clickCount') ? parseInt(localStorage.getItem('clickCount')) : 0;
+  
+  // 顯示當前次數
+  document.getElementById('counter').innerText = `Button clicked: ${count} times`;
+
+  function handleClick() {
+    count++;
+    alert('Thank you for your visit！');
+    
+    // 更新計數顯示
+    document.getElementById('counter').innerText = `Button clicked: ${count} times`;
+
+    // 存入 localStorage
+    localStorage.setItem('clickCount', count);
+  }
+</script>
+
+
+    <hr style="height:2px;background-color:blue">
+
+    <h2>Related Links</h2>
+
+    <p><a href="https://cgjh.hcc.edu.tw/" target="_blank">Hsinchu County Cheng-Gong Junior High School</a></p>
+    <p><a href="https://www.khsh.hcc.edu.tw/home" target="_blank">National Kuan-Hsi Senior High School</a></p>
+    <p><a href="https://www.nttu.edu.tw" target="_blank">National Taitung University</a></p>
+    <p><a href="https://git.nttu.edu.tw" target="_blank">National Taitung University - Department of Green Energy and Information Technology</a></p>
+
+    
 </body>
 </html>
