@@ -1,74 +1,169 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yu-Hsiang Tseng's Personal Profile - My Final Project</title>
-    <meta name="description" content="Zeng Yuxiang's Personal Profile, including Hobbies, Education, and Future Goals。">
-    <style>
-        body{background-color: #f2f2f2;}
-    </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Pacifico&display=swap" rel="stylesheet">
-</head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Yu-Hsiang Tseng's Personal Profile - My Final Project</title>
 <style>
-    body {
+  body {
     font-family: "Delius", cursive;
     font-weight: 400;
     font-style: normal;
-    background-color: #f2f2f2;
-    text-align: center; /* 讓文字內容置中 */
-}
-
-h1, h2, p {
-    text-align: center; /* 標題和段落置中 */
-}
-
-ul {
-    display: inline-block;
-    text-align: left; /* 防止 ul 內文也置中，保持正常排版 */
-}
-
-img {
-    display: block;
-    margin: 0 auto; /* 讓圖片置中 */
-}
-
-iframe {
-    display: block;
-    margin: 0 auto; /* 讓 iframe (地圖與影片) 置中 */
-}
-
-button {
-    display: block;
-    margin: 10px auto; /* 讓按鈕置中 */
-}
-
-div {
+    margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: center; /* 讓 div 內的圖片等元素置中 */
-    flex-wrap: wrap; /* 避免圖片過多時溢出 */
+    min-height: 100vh;
+  }
+
+
+  .sidebar {
+  height: calc(var(--vh, 1vh) * 100);
+  }
+
+
+  .sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar ul li {
+    margin: 10px 0;
+  }
+
+  .sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+
+  /* 主內容區 */
+  .content {
+    margin-left: 240px; /* 給 sidebar 留空間 */
+    padding: 20px;
+    flex: 1;
+  }
+
+  /* 底部固定日期時間欄 */
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 220px; /* 跟 sidebar 寬度一致 */
+    width: calc(100% - 220px);
+    background: #ddd;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  }
+
+ .sidebar {
+    width: 200px;
+    background-color: #f6ffe4;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    position: fixed;
+    height: 10000px;
+    overflow-y: auto;
+    transition: width 0.3s ease;
+  }
+
+  .sidebar.collapsed {
+    width: 60px;
+    padding: 20px 5px;
+    overflow-x: hidden;
+  }
+
+  .sidebar.collapsed h2,
+  .sidebar.collapsed ul li a {
+    display: none;
+  }
+
+  .toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 200px; /* 預設展開狀態下的位置 */
+    background-color: #c2a477;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .content {
+    margin-left: 240px;
+    padding: 20px;
+    flex: 1;
+    transition: margin-left 0.3s ease;
+  }
+
+  .sidebar.collapsed ~ .content {
+    margin-left: 80px;
+  }
+
+  .footer {
+  position: fixed;
+  bottom: 0;
+  left: 220px;
+  width: calc(100% - 220px);
+  background: #ddd;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  transition: left 0.3s ease, width 0.3s ease;
 }
 
-</style>
-<style>
-body {
-  font-family: "Delius", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
+  .sidebar.collapsed ~ .footer {
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+
 
 </style>
+<script>
+  function setFullHeight() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
+  window.addEventListener('resize', setFullHeight);
+  window.addEventListener('load', setFullHeight);
+</script>
+
+</head>
 <body>
-    <h1>Yu-Hsiang Tseng's Personal Profile</h1>
+  
+  <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+
+  <div class="sidebar">
+    <h2>List</h2>
+    <ul>
+      <li><a href="#personal-information">Personal Information</a></li>
+      <li><a href="#hobbies">Hobbies</a></li>
+      <li><a href="#photo-gallery">Photo Gallery</a></li>
+      <li><a href="#video">Video</a></li>
+      <li><a href="#related-links">Related Links</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+
+    <h1 id="personal-information">Yu-Hsiang Tseng's Personal Profile</h1>
     <a href="https://www.bing.com/ck/a?!&&p=89c665e7c8aed6fa8cbd3ae290538f031aa39a881e164dc2d2527ebf3af26c38JmltdHM9MTc0MDk2MDAwMA&ptn=3&ver=2&hsh=4&fclid=3bbf238a-33f8-6e88-2910-3041326c6f75&psq=%e7%ab%b9%e5%8c%97&u=a1aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kvJUU3JUFCJUI5JUU1JThDJTk3JUU1JUI4JTgy&ntb=1">
     <img src="https://th.bing.com/th/id/OIP.QDcY9vRsFPs0_ZNHtsbG7AAAAA?rs=1&pid=ImgDetMain" alt="Click here to visit the website" width="300" height="200">
     </a>
 
     <hr>
 
-    <h2>Personal Information</h2>
+    <h3>Personal Information</h3>
     <ul>
         <li>Name: TSENG YU HSIANG</li>
         <li>Gender: Male</li>
@@ -78,108 +173,113 @@ body {
         <li>Address: No. 6, Lane 57, Fulu 2nd Street, Xinpu Township, Hsinchu County, Taiwan.</li>
         <li>Education: Hsinchu County Cheng-Gong Junior High School , National Kuan-Hsi Senior High School , National Taitung University</li>
 
-<script>
-  function openMap() {
-    // 導航的目的地（經緯度）
-    let destination = "24.833608,121.030121";
-    
-    // 使用 Google 地圖導航
-    window.open(`https://www.google.com/maps/dir/?api=1&destination=${destination}`, '_blank');
-  }
-</script>
+    <script>
+      function openMap() {
+        // 導航的目的地（經緯度）
+        let destination = "24.833608,121.030121";
+        
+        // 使用 Google 地圖導航
+        window.open(`https://www.google.com/maps/dir/?api=1&destination=${destination}`, '_blank');
+      }
+    </script>
     </ul>
 
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.879658891485!2d121.02546198265001!3d24.833788721083803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346836de53e81cb3%3A0x21cac7ec4309af3d!2zMzA15paw56u557ij5paw5Z-U6Y6u56aP56W_5LqM6KGXNTfomZ8!5e0!3m2!1szh-TW!2stw!4v1741616464337!5m2!1szh-TW!2stw" width="320" height="240" style="border:0;position: relative;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
     <p>
-        I am from <strong>Zhubei City, Hsinchu County</strong>, which is an important hub for Taiwan's technology industry. I am currently studying in the Department of Green Energy and Information Technology at <strong>National Taitung University</strong>, and I hope to work in the semiconductor industry or in a mechanical-related field in the future. During my academic journey, I served as a class officer, learning how to communicate with others and manage time. Through participating in extracurricular activities, I improved my teamwork skills and learned how to interact with people from different backgrounds.I am responsible, helpful, and always strive to complete the tasks assigned to me, whether in daily life or at work. I believe that growth comes from challenges, so I am open to new learning opportunities and continuously strive to improve my professional skills.
+        <strong>I am from Zhubei City, Hsinchu County</strong>, which is an important hub for Taiwan's technology industry. I am currently studying in the Department of Green Energy and Information Technology at National Taitung University, and I hope to work in the semiconductor industry or in a mechanical-related field in the future. During my academic journey, I served as a class officer, learning how to communicate with others and manage time. Through participating in extracurricular activities, I improved my teamwork skills and learned how to interact with people from different backgrounds.I am responsible, helpful, and always strive to complete the tasks assigned to me, whether in daily life or at work. I believe that growth comes from challenges, so I am open to new learning opportunities and continuously strive to improve my professional skills.
     </p>
 
     <hr>
 
-    <h2>Hobbies</h2>
+    <h3 id="hobbies">Hobbies</h3>
     <p>I love jogging. Through jogging, I have built endurance and willpower, and also developed self-discipline and perseverance. I believe these traits will help me stay organized and continue making progress in both work and studies.
     </p>
 
     <hr>
 
-    <h2>Photo Gallery</h2>
-<p>Here are some of my pictures:</p>
+    <h3 id="photo-gallery">Photo Gallery</h3>
+    <p>Here are some of my pictures:</p>
 
-<style>
-  .photo-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-  }
+    <style>
+      .photo-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+      }
 
-  .polaroid {
-    background: white;
-    padding: 10px 10px 25px 10px;
-    width: 300px;
-    height: 260px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    text-align: center;
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+      .polaroid {
+        background: white;
+        padding: 10px 10px 25px 10px;
+        width: 300px;
+        height: 260px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        border-radius: 8px;
+        text-align: center;
+        position: relative;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
 
-  .polaroid img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 4px;
-  }
+      .polaroid img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 4px;
+      }
 
-  .caption {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
-    color: #555;
-    margin-top: 8px;
-  }
+      .caption {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 14px;
+        color: #555;
+        margin-top: 8px;
+      }
 
-  /* 膠帶效果 */
-  .tape {
-    width: 80px;
-    height: 20px;
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px dashed #aaa;
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%) rotate(-5deg);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 2;
-  }
+      /* 膠帶效果 */
+      .tape {
+       width: 80px;
+       height: 20px;
+       background: #c2a477; /* 牛皮紙咖啡色 */
+       border: 1px dashed rgba(255, 255, 255, 0.3); /* 淡淡的邊框更自然 */
+       position: absolute;
+       top: -10px;
+       left: 50%;
+       transform: translateX(-50%) rotate(-5deg);
+       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+       z-index: 2;
+       }
 
-  /* 每張圖的旋轉角度 */
-  .polaroid:nth-child(1) {
-    transform: rotate(-2deg);
-  }
 
-  .polaroid:nth-child(2) {
-    transform: rotate(2.5deg);
-  }
 
-  .polaroid:nth-child(3) {
-    transform: rotate(-1.5deg);
-  }
 
-  .polaroid:nth-child(4) {
-    transform: rotate(1.8deg);
-  }
 
-  /* Hover 清除旋轉、放大 */
-  .polaroid:hover {
-    transform: scale(1.05) rotate(0deg);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
-    z-index: 3;
-  }
-</style>
 
-<div class="photo-gallery">
+      /* 每張圖的旋轉角度 */
+      .polaroid:nth-child(1) {
+        transform: rotate(-2deg);
+      }
+
+      .polaroid:nth-child(2) {
+        transform: rotate(2.5deg);
+      }
+
+      .polaroid:nth-child(3) {
+        transform: rotate(-1.5deg);
+      }
+
+      .polaroid:nth-child(4) {
+        transform: rotate(1.8deg);
+      }
+
+      /* Hover 清除旋轉、放大 */
+      .polaroid:hover {
+        transform: scale(1.05) rotate(0deg);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+        z-index: 3;
+      }
+    </style>
+
+    <div class="photo-gallery">
   <div class="polaroid">
     <div class="tape"></div>
     <img src="https://yt3.ggpht.com/QXdTeboQRBFKpzQmws2CEP5zgDoHGScYfq7Dks7Gnzmp38jl603Hs-cL58rxJaMch8vhmgwUoYfE=s1600-c-fcrop64=1,38000000c7ffffff-rw-nd-v1" alt="黑部立山">
@@ -203,49 +303,52 @@ body {
     <img src="https://yt3.ggpht.com/qvoR5Wwq4hbhq6-fNF5fQsVel3Em5pH8QPDIjhbyVqDo-YEHY7UQs3vizcRQqIOD_tcVaz8zkanvSg=s1600-c-fcrop64=1,38000000c7ffffff-rw-nd-v1" alt="華源觀景平台">
     <div class="caption">華源觀景平台</div>
   </div>
+
+  <div class="polaroid">
+    <div class="tape"></div>
+    <img src="https://yt3.ggpht.com/h1ds6xRpZMM0CD7zvEU-elsYJ3iLaZxB16Su7EjLrqXvnsqFkEiYZ6Te96NZaKCkGdcTFTnYQ4MY=s1600-rw-nd-v1" alt="南橫六口明隧道">
+    <div class="caption">南橫六口明隧道</div>
+  </div>
+
+  <div class="polaroid">
+    <div class="tape" style="transform: translateX(-50%) rotate(3deg);"></div>
+    <img src="https://yt3.ggpht.com/dBeDpQ645ltT6PbFr4MdYhpzPwyQ9oSnlcAHmIfC_ZQVUoFUkkaiaqPe426lefLXlY9owLYTemHWIw=s1600-rw-nd-v1" alt="天龍吊橋">
+    <div class="caption">天龍吊橋</div>
+  </div>
+
 </div>
-
-
 
     <hr>
 
-    <h2>This is about my video</h2>
+    <h3 id="video">This is about my video</h3>
     <p>This is my video</p>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/efeT4x3E7Zo?si=N0n9F9_6AJB6WLNf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    
-<br>
-    <button onclick="handleClick()">Click to like</button>
-<p id="counter">Button clicked: 0 times</p>
-
-<script>
-  // 讀取 localStorage 中的點擊次數，若無則設為 0
-  let count = localStorage.getItem('clickCount') ? parseInt(localStorage.getItem('clickCount')) : 0;
-  
-  // 顯示當前次數
-  document.getElementById('counter').innerText = `Button clicked: ${count} times`;
-
-  function handleClick() {
-    count++;
-    alert('Thank you for your visit！');
-    
-    // 更新計數顯示
-    document.getElementById('counter').innerText = `Button clicked: ${count} times`;
-
-    // 存入 localStorage
-    localStorage.setItem('clickCount', count);
-  }
-</script>
-
 
     <hr style="height:2px;background-color:blue">
 
-    <h2>Related Links</h2>
-
+    <h3 id="related-links">Related Links</h3>
     <p><a href="https://cgjh.hcc.edu.tw/" target="_blank">Hsinchu County Cheng-Gong Junior High School</a></p>
     <p><a href="https://www.khsh.hcc.edu.tw/home" target="_blank">National Kuan-Hsi Senior High School</a></p>
     <p><a href="https://www.nttu.edu.tw" target="_blank">National Taitung University</a></p>
     <p><a href="https://git.nttu.edu.tw" target="_blank">National Taitung University - Department of Green Energy and Information Technology</a></p>
-
     
+
+    <script>
+  function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    const toggleBtn = document.querySelector('.toggle-btn');
+    sidebar.classList.toggle('collapsed');
+
+    // 根據 sidebar 狀態調整按鈕位置
+    if (sidebar.classList.contains('collapsed')) {
+      toggleBtn.style.left = '20px';
+    } else {
+      toggleBtn.style.left = '200px';
+    }
+  }
+</script>
+
+
+
 </body>
 </html>
