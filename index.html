@@ -15,8 +15,10 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0d1117;
-      color: #c9d1d9;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #0a0a0a;
       scroll-behavior: smooth;
       position: relative;
       z-index: 1;
@@ -35,13 +37,14 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background-color: #161b22cc;
+      background-color: #ffffffee;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px 40px;
       z-index: 1001;
-      border-bottom: 1px solid #30363d;
+      border-bottom: 1px solid #ccc;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .menu-toggle {
@@ -50,17 +53,17 @@
     }
 
     .header-title {
-      font-size: 20px;
+      font-size: 24px;
       font-weight: bold;
       text-align: center;
       flex: 1;
-      color: #58a6ff;
+      color: #0366d6;
     }
 
     .social-link {
-      color: #c9d1d9;
+      color: #333;
       text-decoration: none;
-      font-size: 28px;
+      font-size: 36px;
     }
 
     .sidebar {
@@ -69,15 +72,16 @@
       top: 0;
       height: 100%;
       width: 250px;
-      background-color: #21262dcc;
+      background-color: rgba(255, 255, 255, 0.95);
       padding-top: 60px;
       transition: left 0.3s ease;
       z-index: 1000;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     }
 
     .sidebar a {
       display: block;
-      color: #c9d1d9;
+      color: #111;
       padding: 15px;
       text-decoration: none;
       font-weight: 500;
@@ -85,7 +89,7 @@
     }
 
     .sidebar a:hover {
-      background-color: #30363d;
+      background-color: #f3f4f6;
     }
 
     .sidebar.active {
@@ -104,7 +108,7 @@
       max-width: 200px;
       margin: 10px;
       border-radius: 8px;
-      border: 1px solid #30363d;
+      border: 1px solid #ccc;
       transition: transform 0.3s ease;
     }
 
@@ -113,14 +117,14 @@
     }
 
     footer {
-      background-color: #161b22cc;
-      color: #8b949e;
+      background-color: #ffffffcc;
+      color: #333;
       padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: relative;
-      border-top: 1px solid #30363d;
+      border-top: 1px solid #ccc;
       z-index: 1;
     }
 
@@ -128,14 +132,14 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #238636;
+      background-color: #0a84ff;
       border: none;
       padding: 12px 14px;
       border-radius: 50%;
       cursor: pointer;
       font-size: 22px;
       color: white;
-      box-shadow: 0 0 12px rgba(0, 255, 135, 0.5);
+      box-shadow: 0 0 12px rgba(0, 132, 255, 0.5);
       z-index: 1002;
     }
   </style>
@@ -207,7 +211,7 @@
   </footer>
 
   <button id="topBtn" onclick="scrollToTop()">
-    <i class="fas fa-plane"></i>
+    <i class="fas fa-plane-departure"></i>
   </button>
 
   <script>
@@ -230,12 +234,12 @@
     particlesJS("particles-js", {
       particles: {
         number: { value: 50, density: { enable: true, value_area: 800 } },
-        color: { value: "#58a6ff" },
+        color: { value: "#0366d6" },
         shape: { type: "circle" },
-        opacity: { value: 0.3, random: true },
+        opacity: { value: 0.25, random: true },
         size: { value: 3, random: true },
-        line_linked: { enable: true, distance: 150, color: "#58a6ff", opacity: 0.2, width: 1 },
-        move: { enable: true, speed: 1, out_mode: "bounce" }
+        line_linked: { enable: true, distance: 150, color: "#0366d6", opacity: 0.2, width: 1 },
+        move: { enable: true, speed: 1.5, out_mode: "bounce" }
       },
       interactivity: {
         events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" } },
