@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Personal Website</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <style>
     * {
       margin: 0;
@@ -17,18 +18,29 @@
       background-color: #0d1117;
       color: #c9d1d9;
       scroll-behavior: smooth;
+      position: relative;
+      z-index: 1;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      top: 0;
+      left: 0;
     }
 
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      background-color: #161b22;
+      background-color: #161b22cc;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
-      z-index: 1000;
+      padding: 10px 40px;
+      z-index: 1001;
       border-bottom: 1px solid #30363d;
     }
 
@@ -37,16 +49,30 @@
       cursor: pointer;
     }
 
+    .header-title {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      flex: 1;
+      color: #58a6ff;
+    }
+
+    .social-link {
+      color: #c9d1d9;
+      text-decoration: none;
+      font-size: 28px;
+    }
+
     .sidebar {
       position: fixed;
       left: -250px;
       top: 0;
       height: 100%;
       width: 250px;
-      background-color: #21262d;
+      background-color: #21262dcc;
       padding-top: 60px;
       transition: left 0.3s ease;
-      z-index: 999;
+      z-index: 1000;
     }
 
     .sidebar a {
@@ -66,16 +92,12 @@
       left: 0;
     }
 
-    .social-link {
-      color: #c9d1d9;
-      text-decoration: none;
-      font-size: 20px;
-    }
-
     section {
-      padding: 100px 20px 40px;
+      padding: 120px 20px 40px;
       max-width: 1000px;
       margin: auto;
+      position: relative;
+      z-index: 1;
     }
 
     .gallery img {
@@ -91,7 +113,7 @@
     }
 
     footer {
-      background-color: #161b22;
+      background-color: #161b22cc;
       color: #8b949e;
       padding: 10px 20px;
       display: flex;
@@ -99,6 +121,7 @@
       align-items: center;
       position: relative;
       border-top: 1px solid #30363d;
+      z-index: 1;
     }
 
     #topBtn {
@@ -110,17 +133,20 @@
       padding: 12px 14px;
       border-radius: 50%;
       cursor: pointer;
-      font-size: 20px;
+      font-size: 22px;
       color: white;
-      box-shadow: 0 0 10px rgba(0, 255, 135, 0.4);
+      box-shadow: 0 0 12px rgba(0, 255, 135, 0.5);
+      z-index: 1002;
     }
   </style>
 </head>
 <body>
+  <div id="particles-js"></div>
   <header>
     <div class="menu-toggle" onclick="toggleMenu()">
       <i class="fas fa-bars"></i>
     </div>
+    <div class="header-title">Yu-Hsiang Tseng's Personal Profile</div>
     <a class="social-link" href="https://instagram.com/yourprofile" target="_blank">
       <i class="fab fa-instagram"></i>
     </a>
@@ -181,7 +207,7 @@
   </footer>
 
   <button id="topBtn" onclick="scrollToTop()">
-    <i class="fas fa-jet-fighter-up"></i>
+    <i class="fas fa-plane"></i>
   </button>
 
   <script>
@@ -200,6 +226,23 @@
     }
     updateTime();
     setInterval(updateTime, 1000);
+
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 50, density: { enable: true, value_area: 800 } },
+        color: { value: "#58a6ff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.3, random: true },
+        size: { value: 3, random: true },
+        line_linked: { enable: true, distance: 150, color: "#58a6ff", opacity: 0.2, width: 1 },
+        move: { enable: true, speed: 1, out_mode: "bounce" }
+      },
+      interactivity: {
+        events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" } },
+        modes: { repulse: { distance: 100 }, push: { particles_nb: 4 } }
+      },
+      retina_detect: true
+    });
   </script>
 </body>
 </html>
