@@ -1,159 +1,167 @@
-<!DOCTYPE html> <!-- 宣告這是 HTML5 文件 -->
-<html lang="en"> <!-- 設定語言為英文 -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" /> <!-- 設定網頁的編碼為 UTF-8 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- 設定響應式設計 -->
-  <title>My Personal Website</title> <!-- 設定網頁標題 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- 引入 Font Awesome 圖示庫 -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Personal Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    } /* 重置基本樣式，避免瀏覽器預設造成干擾 */
+    }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 設定字體 */
-      background-color: #0d1117; /* 背景色偏深科技風 */
-      color: #c9d1d9; /* 字體顏色柔和的灰白色 */
-      scroll-behavior: smooth; /* 平滑滾動效果 */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      scroll-behavior: smooth;
     }
 
     header {
-      position: fixed; /* 固定在頂部 */
+      position: fixed;
       top: 0;
       width: 100%;
-      background-color: #161b22; /* 深色背景 */
-      display: flex; /* 使用 flex 排列元素 */
-      justify-content: space-between; /* 左右兩邊對齊 */
-      align-items: center; /* 垂直置中 */
-      padding: 10px 20px; /* 內距 */
-      z-index: 1000; /* 讓它在最上層 */
+      background-color: #161b22;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      z-index: 1000;
+      border-bottom: 1px solid #30363d;
     }
 
     .menu-toggle {
-      font-size: 24px; /* 按鈕大小 */
-      cursor: pointer; /* 滑鼠懸停為手指 */
+      font-size: 24px;
+      cursor: pointer;
     }
 
     .sidebar {
-      position: fixed; /* 側欄固定 */
-      left: -250px; /* 初始隱藏在左側 */
+      position: fixed;
+      left: -250px;
       top: 0;
-      height: 100%; /* 滿高 */
-      width: 250px; /* 側欄寬度 */
-      background-color: #21262d; /* 背景色 */
-      padding-top: 60px; /* 頂部內距避開 header */
-      transition: left 0.3s ease; /* 動畫效果 */
+      height: 100%;
+      width: 250px;
+      background-color: #21262d;
+      padding-top: 60px;
+      transition: left 0.3s ease;
       z-index: 999;
     }
 
     .sidebar a {
-      display: block; /* 區塊顯示 */
-      color: #c9d1d9; /* 字色 */
-      padding: 15px; /* 內距 */
-      text-decoration: none; /* 去除底線 */
+      display: block;
+      color: #c9d1d9;
+      padding: 15px;
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.5px;
     }
 
     .sidebar a:hover {
-      background-color: #30363d; /* 滑過時背景變深 */
+      background-color: #30363d;
     }
 
     .sidebar.active {
-      left: 0; /* 顯示側欄 */
+      left: 0;
     }
 
     .social-link {
-      color: #c9d1d9; /* 字色 */
-      text-decoration: none; /* 去底線 */
-      font-size: 20px; /* 圖示大小 */
+      color: #c9d1d9;
+      text-decoration: none;
+      font-size: 20px;
     }
 
     section {
-      padding: 100px 20px 40px; /* 上方避免 header 遮住 */
-      max-width: 1000px; /* 最大寬度 */
-      margin: auto; /* 置中 */
+      padding: 100px 20px 40px;
+      max-width: 1000px;
+      margin: auto;
     }
 
     .gallery img {
-      max-width: 200px; /* 限制圖片寬度 */
-      margin: 10px; /* 圖片間距 */
-      border-radius: 8px; /* 圓角 */
-      border: 1px solid #30363d; /* 邊框 */
+      max-width: 200px;
+      margin: 10px;
+      border-radius: 8px;
+      border: 1px solid #30363d;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
     }
 
     footer {
-      background-color: #161b22; /* 背景色 */
-      color: #8b949e; /* 字色 */
-      padding: 10px 20px; /* 內距 */
-      display: flex; /* 使用 flex 排列 */
-      justify-content: space-between; /* 左右對齊 */
-      align-items: center; /* 垂直置中 */
-      position: relative; /* 相對定位 */
+      background-color: #161b22;
+      color: #8b949e;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      border-top: 1px solid #30363d;
     }
 
     #topBtn {
-      position: fixed; /* 固定在右下 */
+      position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #238636; /* 綠色背景 */
-      border: none; /* 無邊框 */
-      padding: 10px 15px; /* 內距 */
-      border-radius: 50%; /* 圓形 */
-      cursor: pointer; /* 滑鼠為手 */
-      font-size: 18px; /* 圖示大小 */
-      color: white; /* 白色圖示 */
+      background-color: #238636;
+      border: none;
+      padding: 12px 14px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
+      color: white;
+      box-shadow: 0 0 10px rgba(0, 255, 135, 0.4);
     }
   </style>
 </head>
 <body>
   <header>
     <div class="menu-toggle" onclick="toggleMenu()">
-      <i class="fas fa-bars"></i> <!-- 三條線圖示 -->
+      <i class="fas fa-bars"></i>
     </div>
     <a class="social-link" href="https://instagram.com/yourprofile" target="_blank">
-      <i class="fab fa-instagram"></i> <!-- Instagram 圖示連結 -->
+      <i class="fab fa-instagram"></i>
     </a>
   </header>
 
-  <nav class="sidebar" id="sidebar"> <!-- 側欄選單 -->
-    <a href="#">景點介紹</a>
-    <a href="#">美食介紹</a>
-    <!-- 更多頁面可加在這裡 -->
+  <nav class="sidebar" id="sidebar">
+    <a href="#">Place Guide</a>
+    <a href="#">Food Guide</a>
   </nav>
 
-  <section id="intro"> <!-- 封面介紹區塊 -->
-    <h1>個人介紹</h1>
-    <p>歡迎來到我的網站！</p>
+  <section id="intro">
+    <h1>Welcome</h1>
+    <p>Hello! This is my personal tech-themed website.</p>
   </section>
 
-  <section id="personal-info"> <!-- 個人資訊區塊 -->
+  <section id="personal-info">
     <h2>Personal Information</h2>
     <ul>
       <li><strong>Name:</strong> Your Name</li>
       <li><strong>Gender:</strong> Your Gender</li>
-      <li><strong>Phone:</strong> <a href="tel:+1234567890">+1234567890</a></li> <!-- 點擊撥號 -->
-      <li><strong>Email:</strong> <a href="mailto:your@email.com">your@email.com</a></li> <!-- 點擊寄信 -->
+      <li><strong>Phone:</strong> <a href="tel:+1234567890">+1234567890</a></li>
+      <li><strong>Email:</strong> <a href="mailto:your@email.com">your@email.com</a></li>
       <li><strong>Address:</strong> Your Address</li>
       <li><strong>Education:</strong> Your Education Info</li>
     </ul>
   </section>
 
-  <section id="hobbies"> <!-- 興趣區塊 -->
+  <section id="hobbies">
     <h2>Hobbies</h2>
-    <p>喜歡的活動與興趣描述...</p>
+    <p>My favorite activities include programming, gaming, and hiking.</p>
   </section>
 
-  <section id="gallery"> <!-- 照片區塊 -->
+  <section id="gallery">
     <h2>Photo Gallery</h2>
     <div class="gallery">
       <img src="your-photo1.jpg" alt="Gallery Photo 1">
       <img src="your-photo2.jpg" alt="Gallery Photo 2">
-      <!-- 更多照片 -->
     </div>
   </section>
 
-  <section id="video"> <!-- 影片區塊 -->
+  <section id="video">
     <h2>Video</h2>
     <video controls width="100%">
       <source src="your-video.mp4" type="video/mp4">
@@ -161,7 +169,7 @@
     </video>
   </section>
 
-  <section id="links"> <!-- 相關連結區塊 -->
+  <section id="links">
     <h2>Related Links</h2>
     <ul>
       <li><a href="https://example.com" target="_blank">Example Link</a></li>
@@ -169,29 +177,29 @@
   </section>
 
   <footer>
-    <div>現在時間：<span id="currentTime"></span></div> <!-- 顯示目前時間 -->
+    <div>Current Time: <span id="currentTime"></span></div>
   </footer>
 
-  <button id="topBtn" onclick="scrollToTop()"> <!-- 回到頂部按鈕 -->
-    <i class="fas fa-paper-plane"></i>
+  <button id="topBtn" onclick="scrollToTop()">
+    <i class="fas fa-jet-fighter-up"></i>
   </button>
 
   <script>
     function toggleMenu() {
       const sidebar = document.getElementById('sidebar');
-      sidebar.classList.toggle('active'); // 切換側欄開關
+      sidebar.classList.toggle('active');
     }
 
     function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' }); // 平滑回到頂部
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function updateTime() {
       const now = new Date();
-      document.getElementById('currentTime').textContent = now.toLocaleString(); // 取得當前時間並顯示
+      document.getElementById('currentTime').textContent = now.toLocaleString();
     }
-    updateTime(); // 初始執行一次
-    setInterval(updateTime, 1000); // 每秒更新時間
+    updateTime();
+    setInterval(updateTime, 1000);
   </script>
 </body>
 </html>
