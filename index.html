@@ -169,25 +169,140 @@
   <section id="personal-info">
     <h2>Personal Information</h2>
     <ul>
-      <li><strong>Name:</strong> Your Name</li>
-      <li><strong>Gender:</strong> Your Gender</li>
-      <li><strong>Phone:</strong> <a href="tel:+1234567890">+1234567890</a></li>
-      <li><strong>Email:</strong> <a href="mailto:your@email.com">your@email.com</a></li>
-      <li><strong>Address:</strong> Your Address</li>
-      <li><strong>Education:</strong> Your Education Info</li>
+      <li><strong>Name:</strong> Yu-Hsiang Tseng</li>
+      <li><strong>Gender:</strong> Male</li>
+      <li><strong>age:</strong> 20</li>
+      <li><strong>Phone:</strong> <a href="tel:+886966769955">+886966769955</a></li>
+      <li><strong>Email:</strong> <a href="mailto:eaglecomtw386@gmail.com">eaglecomtw386@gmail.com</a></li>
+      <li><strong>Address:</strong> No. 6, Lane 57, Fulu 2nd Street, Xinpu Township, Hsinchu County, Taiwan.</li>
+      <li><strong>Education:</strong>  Hsinchu County Cheng-Gong Junior High School , National Kuan-Hsi Senior High School , National Taitung University</li>
     </ul>
   </section>
 
   <section id="hobbies">
     <h2>Hobbies</h2>
-    <p>My favorite activities include programming, gaming, and hiking.</p>
+    <p>My interests include jogging, hiking, and challenging myself with unique or extreme sports such as scuba diving and skydiving. I enjoy pushing the limits of both my body and mind through physical activities, gaining a sense of accomplishment and personal growth in the process.Among these, jogging is my favorite. Although it seems simple, jogging is a sport that truly tests endurance and willpower. Through regular training, I have not only improved my physical fitness but also developed self-discipline and perseverance. These traits have greatly helped me stay organized and steadily progress toward my goals in both academics and daily life.Hiking is another passion of mine. While the journey can be physically demanding, the sense of fulfillment I feel upon reaching the summit and taking in the view is indescribable. That rewarding feeling, born from hard work and determination, motivates me to continue challenging myself and overcoming obstacles.In addition, the next sport I would like to explore is cycling. I am curious about long-distance rides and look forward to discovering new landscapes while further building my endurance and patience.Overall, my interests are not limited to sports themselves but reflect a mindset of continuous exploration and learning. I enjoy stepping into unfamiliar territory and embracing the process of learning from scratch. I also take pleasure in facing challenges and pushing beyond my limits. This mindset has made me more adaptable and resilient in both my studies and life, equipping me to handle change and adversity with confidence.</p>
   </section>
 
   <section id="gallery">
     <h2>Photo Gallery</h2>
     <div class="gallery">
-      <img src="your-photo1.jpg" alt="Gallery Photo 1">
-      <img src="your-photo2.jpg" alt="Gallery Photo 2">
+      <p>Here are some of my pictures:</p>
+
+    <style>
+      .photo-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+      }
+
+      .polaroid {
+        background: white;
+        padding: 10px 10px 25px 10px;
+        width: 300px;
+        height: 260px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        border-radius: 8px;
+        text-align: center;
+        position: relative;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .polaroid img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+
+      .caption {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 14px;
+        color: #555;
+        margin-top: 8px;
+      }
+
+      /* 膠帶效果 */
+      .tape {
+       width: 80px;
+       height: 20px;
+       background: #c2a477; /* 牛皮紙咖啡色 */
+       border: 1px dashed rgba(255, 255, 255, 0.3); /* 淡淡的邊框更自然 */
+       position: absolute;
+       top: -10px;
+       left: 50%;
+       transform: translateX(-50%) rotate(-5deg);
+       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+       z-index: 2;
+       }
+
+
+
+
+
+
+      /* 每張圖的旋轉角度 */
+      .polaroid:nth-child(1) {
+        transform: rotate(-2deg);
+      }
+
+      .polaroid:nth-child(2) {
+        transform: rotate(2.5deg);
+      }
+
+      .polaroid:nth-child(3) {
+        transform: rotate(-1.5deg);
+      }
+
+      .polaroid:nth-child(4) {
+        transform: rotate(1.8deg);
+      }
+
+      /* Hover 清除旋轉、放大 */
+      .polaroid:hover {
+        transform: scale(1.05) rotate(0deg);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+        z-index: 3;
+      }
+    </style>
+
+    <div class="photo-gallery">
+  <div class="polaroid">
+    <div class="tape"></div>
+    <img src="https://yt3.ggpht.com/QXdTeboQRBFKpzQmws2CEP5zgDoHGScYfq7Dks7Gnzmp38jl603Hs-cL58rxJaMch8vhmgwUoYfE=s1600-c-fcrop64=1,38000000c7ffffff-rw-nd-v1" alt="黑部立山">
+    <div class="caption">黑部立山</div>
+  </div>
+
+  <div class="polaroid">
+    <div class="tape" style="transform: translateX(-50%) rotate(3deg);"></div>
+    <img src="https://yt3.ggpht.com/BwdORtXA9-p0kEbUuynyAhz6IbIOFVqnBCiJB5Iq7ruDRXzbrfLxZs0Un49RxvcRt1sjzx4-BH6u=s800-c-fcrop64=1,38000000c7ffffff-rw-nd-v1" alt="台北市">
+    <div class="caption">台北市</div>
+  </div>
+
+  <div class="polaroid">
+    <div class="tape" style="transform: translateX(-50%) rotate(-4deg);"></div>
+    <img src="https://yt3.ggpht.com/9SAYY8ZF3koMt-t9J8mwZLiuRJbj539BDzQBF78WT3aAg_6FZlIsGGEOq-6hpkvdNfVkqyD91iFvpg=s1108-c-fcrop64=1,1ffa0000e005ffff-rw-nd-v1" alt="後壁湖潛水">
+    <div class="caption">後壁湖潛水</div>
+  </div>
+
+  <div class="polaroid">
+    <div class="tape" style="transform: translateX(-50%) rotate(5deg);"></div>
+    <img src="https://yt3.ggpht.com/qvoR5Wwq4hbhq6-fNF5fQsVel3Em5pH8QPDIjhbyVqDo-YEHY7UQs3vizcRQqIOD_tcVaz8zkanvSg=s1600-c-fcrop64=1,38000000c7ffffff-rw-nd-v1" alt="華源觀景平台">
+    <div class="caption">華源觀景平台</div>
+  </div>
+
+  <div class="polaroid">
+    <div class="tape"></div>
+    <img src="https://yt3.ggpht.com/h1ds6xRpZMM0CD7zvEU-elsYJ3iLaZxB16Su7EjLrqXvnsqFkEiYZ6Te96NZaKCkGdcTFTnYQ4MY=s1600-rw-nd-v1" alt="南橫六口明隧道">
+    <div class="caption">南橫六口明隧道</div>
+  </div>
+
+  <div class="polaroid">
+    <div class="tape" style="transform: translateX(-50%) rotate(3deg);"></div>
+    <img src="https://yt3.ggpht.com/dBeDpQ645ltT6PbFr4MdYhpzPwyQ9oSnlcAHmIfC_ZQVUoFUkkaiaqPe426lefLXlY9owLYTemHWIw=s1600-rw-nd-v1" alt="天龍吊橋">
+    <div class="caption">天龍吊橋</div>
+  </div>
     </div>
   </section>
 
